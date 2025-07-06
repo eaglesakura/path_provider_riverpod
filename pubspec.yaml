@@ -1,6 +1,6 @@
 name: path_provider_riverpod
 description: "Riverpod Provider for path_provider"
-version: 1.0.0
+version: 1.0.0+1
 repository: https://github.com/eaglesakura/path_provider_riverpod/
 
 environment:
