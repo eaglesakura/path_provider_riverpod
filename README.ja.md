@@ -19,7 +19,7 @@
 
 ```yaml
 dependencies:
-  path_provider_riverpod: ^1.0.0
+  path_provider_riverpod: ^1.1.0
 ```
 
 2. アプリケーション起動時に Provider を初期化します：
@@ -74,6 +74,11 @@ testWidgets('test', (tester) async {
   );
 });
 ```
+
+## Version information
+
+このパッケージは Riverpod 3.0 に対応しています。
+Riverpod 2.x から 3.x への移行については、[Riverpod の公式移行ガイド](https://riverpod.dev/docs/migration/from_2_to_3)を参照してください。
 
 ## Additional information
 
