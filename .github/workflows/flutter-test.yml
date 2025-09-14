@@ -22,6 +22,7 @@ jobs:
       # テスト
       - name: flutter test
         run: |
+          cp pubspec_overrides.yaml.tmp pubspec_overrides.yaml
           dart pub get
           dart analyze
           dart format --set-exit-if-changed ./lib/
