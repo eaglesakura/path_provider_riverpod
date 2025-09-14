@@ -2,11 +2,10 @@ import 'dart:io';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
+import 'package:riverpod/misc.dart';
 
 /// path_provider ライブラリの取得内容をProviderとして同期的に取得する.
 class PathProviders {
-  const PathProviders._();
-
   /// Path to a directory where the application may place application-specific
   /// cache files.
   ///
@@ -103,41 +102,7 @@ class PathProviders {
     (ref) => throw UnimplementedError('temporaryDirectory'),
   );
 
-  /// 指定したディレクトリを上書きして返す.
-  static List<Override> injectWithValue({
-    Directory? applicationCacheDirectory,
-    Directory? applicationDocumentsDirectory,
-    Directory? applicationSupportDirectory,
-    Directory? downloadsDirectory,
-    Directory? externalStorageDirectory,
-    Directory? libraryDirectory,
-    Directory? temporaryDirectory,
-  }) {
-    return [
-      if (applicationCacheDirectory != null)
-        PathProviders.applicationCacheDirectory.overrideWithValue(
-          applicationCacheDirectory,
-        ),
-      if (applicationDocumentsDirectory != null)
-        PathProviders.applicationDocumentsDirectory.overrideWithValue(
-          applicationDocumentsDirectory,
-        ),
-      if (applicationSupportDirectory != null)
-        PathProviders.applicationSupportDirectory.overrideWithValue(
-          applicationSupportDirectory,
-        ),
-      if (downloadsDirectory != null)
-        PathProviders.downloadsDirectory.overrideWithValue(downloadsDirectory),
-      if (externalStorageDirectory != null)
-        PathProviders.externalStorageDirectory.overrideWithValue(
-          externalStorageDirectory,
-        ),
-      if (libraryDirectory != null)
-        PathProviders.libraryDirectory.overrideWithValue(libraryDirectory),
-      if (temporaryDirectory != null)
-        PathProviders.temporaryDirectory.overrideWithValue(temporaryDirectory),
-    ];
-  }
+  const PathProviders._();
 
   /// 既定値での上書きを行う.
   static Future<List<Override>> inject() async {
@@ -178,5 +143,41 @@ class PathProviders {
       libraryDirectory: libraryDirectory,
       temporaryDirectory: temporaryDirectory,
     );
+  }
+
+  /// 指定したディレクトリを上書きして返す.
+  static List<Override> injectWithValue({
+    Directory? applicationCacheDirectory,
+    Directory? applicationDocumentsDirectory,
+    Directory? applicationSupportDirectory,
+    Directory? downloadsDirectory,
+    Directory? externalStorageDirectory,
+    Directory? libraryDirectory,
+    Directory? temporaryDirectory,
+  }) {
+    return [
+      if (applicationCacheDirectory != null)
+        PathProviders.applicationCacheDirectory.overrideWithValue(
+          applicationCacheDirectory,
+        ),
+      if (applicationDocumentsDirectory != null)
+        PathProviders.applicationDocumentsDirectory.overrideWithValue(
+          applicationDocumentsDirectory,
+        ),
+      if (applicationSupportDirectory != null)
+        PathProviders.applicationSupportDirectory.overrideWithValue(
+          applicationSupportDirectory,
+        ),
+      if (downloadsDirectory != null)
+        PathProviders.downloadsDirectory.overrideWithValue(downloadsDirectory),
+      if (externalStorageDirectory != null)
+        PathProviders.externalStorageDirectory.overrideWithValue(
+          externalStorageDirectory,
+        ),
+      if (libraryDirectory != null)
+        PathProviders.libraryDirectory.overrideWithValue(libraryDirectory),
+      if (temporaryDirectory != null)
+        PathProviders.temporaryDirectory.overrideWithValue(temporaryDirectory),
+    ];
   }
 }

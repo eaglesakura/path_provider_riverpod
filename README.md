@@ -1,28 +1,28 @@
-`path_provider` ライブラリを Riverpod で使用するための Provider 集です。
-アプリケーションで使用する各種ディレクトリパスを同期的に取得できます。
+A collection of Providers for using the `path_provider` library with Riverpod.
+You can synchronously retrieve various directory paths used in your application.
 
 ## Features
 
-以下のディレクトリパスを Riverpod の Provider として提供します：
+The following directory paths are provided as Riverpod Providers:
 
-- `applicationCacheDirectory` - アプリケーションキャッシュディレクトリ
-- `applicationDocumentsDirectory` - アプリケーションドキュメントディレクトリ
-- `applicationSupportDirectory` - アプリケーションサポートディレクトリ
-- `downloadsDirectory` - ダウンロードディレクトリ
-- `externalStorageDirectory` - 外部ストレージディレクトリ
-- `libraryDirectory` - ライブラリディレクトリ
-- `temporaryDirectory` - テンポラリディレクトリ
+- `applicationCacheDirectory` - Application cache directory
+- `applicationDocumentsDirectory` - Application documents directory
+- `applicationSupportDirectory` - Application support directory
+- `downloadsDirectory` - Downloads directory
+- `externalStorageDirectory` - External storage directory
+- `libraryDirectory` - Library directory
+- `temporaryDirectory` - Temporary directory
 
 ## Getting started
 
-1. `pubspec.yaml` に依存関係を追加します：
+1. Add the dependency to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  path_provider_riverpod: ^1.0.0
+  path_provider_riverpod: ^2.0.0
 ```
 
-2. アプリケーション起動時に Provider を初期化します：
+2. Initialize the Provider when starting your application:
 
 ```dart
 void main() async {
@@ -41,7 +41,7 @@ void main() async {
 
 ## Usage
 
-Provider を使用してディレクトリパスを取得できます：
+You can retrieve directory paths using Providers:
 
 ```dart
 class MyWidget extends ConsumerWidget {
@@ -60,7 +60,7 @@ class MyWidget extends ConsumerWidget {
 }
 ```
 
-テスト時には `injectWithValue` メソッドを使用して任意のディレクトリを設定できます：
+For testing, you can set arbitrary directories using the `injectWithValue` method:
 
 ```dart
 testWidgets('test', (tester) async {
@@ -75,9 +75,14 @@ testWidgets('test', (tester) async {
 });
 ```
 
+## Version information
+
+This package supports Riverpod 3.0.
+For migration from Riverpod 2.x to 3.x, please refer to the [official Riverpod migration guide](https://riverpod.dev/docs/migration/from_2_to_3).
+
 ## Additional information
 
-このパッケージは `path_provider` ライブラリの Riverpod ラッパーです。
-各ディレクトリの詳細については `path_provider` パッケージのドキュメントを参照してください。
+This package is a Riverpod wrapper for the `path_provider` library.
+For details about each directory, please refer to the `path_provider` package documentation.
 
-バグレポートや機能要求は、GitHub リポジトリの Issues ページで受け付けています。
+Bug reports and feature requests are welcome on the GitHub repository's Issues page.
