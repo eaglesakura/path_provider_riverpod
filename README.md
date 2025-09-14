@@ -19,7 +19,7 @@ The following directory paths are provided as Riverpod Providers:
 
 ```yaml
 dependencies:
-  path_provider_riverpod: ^1.1.0
+  path_provider_riverpod: ^2.0.0
 ```
 
 2. Initialize the Provider when starting your application:

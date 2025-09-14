@@ -19,7 +19,7 @@
 
 ```yaml
 dependencies:
-  path_provider_riverpod: ^1.1.0
+  path_provider_riverpod: ^2.0.0
 ```
 
 2. アプリケーション起動時に Provider を初期化します：
