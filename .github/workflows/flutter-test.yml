@@ -6,6 +6,13 @@ on:
       - main
       - develop
       - v*
+  pull_request:
+    branches:
+      - main
+      - develop
+      - v*
+      - feature/**
+  workflow_dispatch:
 
 jobs:
   test:
